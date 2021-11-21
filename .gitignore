@@ -8,6 +8,13 @@
 # testing
 /coverage
 
+# functions
+functions/node_modules
+functions/lib
+
+# UI
+ui/node_modules
+
 # production
 /build
 
