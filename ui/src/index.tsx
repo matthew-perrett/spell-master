@@ -32,6 +32,16 @@ function addWord(event: MouseEvent) {
     });
 }
 
+function textToSpeech(event: MouseEvent) {
+    console.log(event);
+    let addWord = firebase.functions().httpsCallable('textToSpeech');
+    addWord({word: "Fire"}).then((result) => {
+        const text = result.data.text;
+        console.log(text);
+    }).catch(function (error) {
+        console.error(error);
+    });
+}
 
 function Game() {
     return (
@@ -41,6 +51,9 @@ function Game() {
             </button>
             <button onClick={addWord}>
                 Add Word
+            </button>
+            <button onClick={textToSpeech}>
+                Pronounce Word
             </button>
             <div className="game-board">
                 abcd123
