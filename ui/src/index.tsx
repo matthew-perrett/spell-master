@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import './index.css';
-import React, {MouseEvent} from "react";
+import {MouseEvent} from "react";
 import firebase from "firebase/compat";
 
 const firebaseConfig = {

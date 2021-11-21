@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "esModuleInterop": true,
     "noUnusedLocals": true,
-    "outDir": "lib",
-    "sourceMap": true,
     "strict": true,
-    "target": "es2017",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es6"
   },
-
 }

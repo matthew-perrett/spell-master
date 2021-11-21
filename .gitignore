@@ -13,6 +13,7 @@ functions/node_modules
 functions/lib
 
 # UI
+ui/build
 ui/node_modules
 
 # production

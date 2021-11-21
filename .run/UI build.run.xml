@@ -2,8 +2,9 @@
   <configuration default="false" name="UI build" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/ui/package.json" />
     <command value="run" />
-    <scripts />
-    <arguments value="build" />
+    <scripts>
+      <script value="build" />
+    </scripts>
     <node-interpreter value="project" />
     <envs />
     <method v="2" />
