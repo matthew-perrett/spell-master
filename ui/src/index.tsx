@@ -33,11 +33,26 @@ function addWord(event: MouseEvent) {
 }
 
 function textToSpeech(event: MouseEvent) {
-    console.log(event);
+
+    const context = new AudioContext();
+
+    function playByteArray(bytes: any) {
+        var buffer = new Uint8Array(bytes.length);
+        buffer.set(new Uint8Array(bytes), 0);
+        context.decodeAudioData(buffer.buffer, play);
+    }
+
+    function play(audioBuffer: any) {
+        var source = context.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(context.destination);
+        source.start(0);
+    }
+
     let addWord = firebase.functions().httpsCallable('textToSpeech');
-    addWord({word: "Fire"}).then((result) => {
-        const text = result.data.text;
-        console.log(text);
+    addWord({word: "development"}).then((result) => {
+        const audioContent = result.data[0].audioContent;
+        playByteArray(Object.values(audioContent))
     }).catch(function (error) {
         console.error(error);
     });
